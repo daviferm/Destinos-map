@@ -6,10 +6,12 @@
                     <div class="form-group barrio">
                         <div class="cont-input">
                             <label for="calle">Dirección: (Calle, Ciudad)</label>
-                            <input type="text" class="form-control" #direccion name="direccion" [(ngModel)]="destino.direccion" placeholder="Introduce la Calle, Ciudad" aria-label="Search" id="calle" required minlength="2" (input)="validarDirec()">
-                            <button type="button" class="close" aria-label="Close" (click)="limpiarInput()">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            <div class="cjaDirecction">
+                                <input type="text" class="form-control" #direccion name="direccion" [(ngModel)]="destino.direccion" placeholder="Introduce la Calle, Ciudad" aria-label="Search" id="calle" required minlength="2" (input)="validarDirec()">
+                                <button type="button" class="close" aria-label="Close" (click)="limpiarInput()">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                         </div>
                         <span *ngIf="sinDirecc" id="no-calle">Escribe una dirección válida!</span>
                     </div>
