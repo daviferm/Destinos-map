@@ -1,0 +1,45 @@
+.contenedor {
+    height: 150px;
+}
+
+.contenedor .cerrar {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.contenedor .cerrar i {
+    font-size: 2.5em;
+    transform: rotate(90deg);
+}
+
+.redes {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+.facebook,
+.whatsapp,
+.twitter {
+    font-size: 2.5em;
+    position: relative;
+    margin: 0px 25px;
+}
+
+.facebook {
+    color: #4862A3;
+}
+
+.redes .whatsapp a i {
+    color: #5FB404;
+}
+
+.redes .twitter a i {
+    color: #26C1F3;
+}

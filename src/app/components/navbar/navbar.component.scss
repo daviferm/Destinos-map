@@ -1,0 +1,184 @@
+header {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+* {
+    outline: none!important;
+}
+
+input[type="text"] {
+    font-size: 12px!important;
+}
+
+input[type="text"]:focus {
+    font-size: 12px!important;
+}
+
+.header>header {
+    position: relative;
+    padding-top: 5px;
+    background-color: #343a40;
+    font-size: .8em;
+    z-index: 200;
+    width: 100%;
+    max-width: 550px;
+    height: 90px;
+}
+
+body.ocultar {
+    transition-duration: .5s;
+    transform: translateX(-110%);
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.formulario section {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    color: #FFFFFF;
+}
+
+.formulario .barrio {
+    position: relative;
+    flex-basis: 58%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100px;
+    margin-left: 5px;
+    .cont-input {
+        position: relative;
+        width: 100%;
+        label {
+            text-align: center;
+            width: 100%;
+        }
+        input {
+            width: 190px;
+            appearance: none;
+            margin: 0px;
+            margin-left: 5px;
+        }
+        .close {
+            position: absolute;
+            top: 28px;
+            right: 0px;
+            padding: .2em;
+            background-color: #17a2b8;
+            color: white;
+            border-radius: 5px;
+        }
+    }
+}
+
+.formulario .numero {
+    flex-basis: 15%;
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    justify-content: center;
+}
+
+.formulario .numero input {
+    width: 60px;
+    appearance: none;
+    margin: 0px;
+}
+
+.formulario .botonForm {
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.formulario input:focus {
+    background-color: #E1E1E1;
+    border-color: #FCDC65;
+}
+
+.form-control {
+    height: 35px;
+    border-radius: 4px;
+    margin: 10px 10px 10px 15px;
+    font-size: 1em;
+    outline: none;
+}
+
+.formulario #botonMapa {
+    position: relative;
+    margin: -10px 10px 0px 0px;
+    width: 50px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #66CC99;
+    cursor: pointer;
+    color: white;
+    font-size: 1.1em;
+    outline: none;
+    box-shadow: 2px 2px 10px gray;
+}
+
+.formulario #botonMapa #icon-spinner {
+    display: none;
+    font-size: 1em;
+    width: 15px;
+    margin: 0px auto;
+}
+
+#no-calle {
+    font-size: 1em;
+    color: rgb(194, 64, 64);
+    margin: 4px 0px 0px 0px;
+    margin: 0px;
+}
+
+.rebote {
+    border: 1px solid red;
+    animation: .4s rebote 1;
+}
+
+@keyframes rebote {
+    0% {
+        transform: translate(0px);
+    }
+    20% {
+        transform: translateX(-10px);
+    }
+    40% {
+        transform: translateX(9px);
+    }
+    60% {
+        transform: translateX(-6px)
+    }
+    80% {
+        transform: translateX(4px);
+    }
+    95% {
+        transform: translateX(-2px);
+    }
+}
+
+@media screen and (min-width: 480px) {
+    header {
+        width: 480px;
+        margin: 0px auto;
+    }
+}

@@ -1,0 +1,29 @@
+<div class="contenedor">
+    <div class="cerrar" (click)="cerrarModar()">
+        <i class="material-icons">arrow_forward_ios</i>
+    </div>
+    <div>
+        <div>
+            <div class="redes">
+                <div class="whatsapp" [@openClose]="moveWhatsapp ? 'open' : 'closed'">
+                    <a href="whatsapp://send?text=https://destinos-map.firebaseapp.com" target="blank">
+                        <i class="fab fa-whatsapp-square"></i>
+                    </a>
+                </div>
+                <div class="twitter">
+                    <a href="https://twitter.com/intent/tweet?url=https://destinos-map.firebaseapp.com&amp;text=Control de mantenimiento." target="blank">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </div>
+                <div class="facebook" [@closeOpen]="moveWhatsapp ? 'open' : 'closed'">
+                    <a href="https://facebook.com/sharer/sharer.php?u=https://destinos-map.firebaseapp.com" target="_blank">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

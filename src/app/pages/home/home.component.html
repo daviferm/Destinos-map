@@ -1,0 +1,38 @@
+<div class="contenedor">
+    <div class="card">
+        <div class="card-header text-center">
+            <div class="titulo">
+                Destinos
+            </div>
+            <div>
+                <button type="button" class="btn btn-info btn-sm">
+                Total: <span class="badge badge-light"> {{ Destinos | entregados }} / {{ Destinos.length }} </span>
+                </button>
+            </div>
+        </div>
+        <ul class="list-group list-group-flush" id="lista-items">
+            <div *ngIf="Destinos.length === 0" class="alert alert-info mt-2" role="alert">
+                No hay ningún destino añadido.
+            </div>
+            <!-- Lista de Direcciones -->
+            <div *ngFor="let item of Destinos; let i = index">
+                <div class="list-group-item" data-id="item.id">
+                    {{ item.calle }}, {{ item.numero }}
+                    <button type="button" class="close closeItem" aria-label="Close" (click)="borrarItems(i)">
+                        <i *ngIf="item.opacidad === 0.5" class="fas fa-check mr-2"></i>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </ul>
+        <div class="card-footer text-muted text-center">
+            <button type="button" class="btn btn-dark" (click)="borrarLista()">Borrar Todo</button>
+            <div class="compartir" (click)="openBottomSheet()">
+                <i class="material-icons">share</i>
+            </div>
+        </div>
+    </div>
+    <app-mapa *ngIf="verMapa && Destinos.length > 0" (closedMapa)="cerrarMapa($event)" (borrarItem)="borrarItems($event)" [Items]="Destinos" [latitud]="centroLat" [longitud]="centroLng"></app-mapa>
+</div>
+<div *ngIf="Destinos.length > 0" id="icon-mapa" (click)="mostrarMapa()" cdkDrag>
+</div>

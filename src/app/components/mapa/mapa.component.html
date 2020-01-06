@@ -1,0 +1,26 @@
+<div id="mapa" [@openClose]="isOpen ? 'open' : 'closed'">
+    <button type="button" class="close" aria-label="Close" (click)="cerrarMapa()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="zoom" [zoomControl]="false" (mapClick)="cerrarInfoWindow()">
+        <agm-marker class="animated fadeIn fast" #myMarker *ngFor="let marcador of Items; let idx = index" [latitude]="marcador.lat" [longitude]="marcador.lng" [iconUrl]="icono" [opacity]="marcador.opacidad" (markerClick)="clickMarker( marcador, myMarker )">
+            <agm-info-window class="infoMarker" *ngIf="marcador.infoWindow">
+                <h6> Destino: </h6>
+                <p> {{ marcador.direccion }} </p>
+                <div class="btn-footer">
+                    <button type="button" class="btn m-1 mr-2 btn-map" (click)="comoLlegar( marcador.lat, marcador.lng )">
+                        <!-- <img src="assets/img/icon-google.png" alt="icon-google"> -->
+                    </button>
+                    <button type="button" *ngIf="marcador.opacidad == 1 || !marcador.opacidad" (click)="tarea(marcador,idx)" class="btn btn-info mr-2">Pendiente</button>
+                    <button type="button" *ngIf="marcador.opacidad == 0.5" (click)="tarea(marcador,idx)" class="btn btn-dark mr-2">Entregado</button>
+                    <button mat-mini-fab color="warn" (click)="borrarDestino(idx)">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </div>
+            </agm-info-window>
+        </agm-marker>
+        <agm-marker *ngIf="gps" [latitude]="location.lat" [longitude]="location.lng" [iconUrl]="imgPosition">
+        </agm-marker>
+    </agm-map>
+
+</div>
