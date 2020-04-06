@@ -64,6 +64,7 @@ body.ocultar {
         position: relative;
         width: 100%;
         .cjaDirecction {
+            position: relative;
             width: 100%;
             height: 35px;
             display: flex;
@@ -73,18 +74,24 @@ body.ocultar {
             text-align: center;
             width: 100%;
         }
-        input {
-            flex-basis: 90%;
+        input[type="text"] {
+            flex-basis: 100%;
             appearance: none;
             margin: 0px;
             margin-left: 5px;
+            padding-right: 1.2rem;
         }
         .close {
             flex-basis: 10%;
             padding: .12em .2em .2em .2em;
+            border: 1px solid white;
             color: white!important;
-            border: 2px solid white;
             border-radius: 5px;
+            background-color: #b55356;
+            opacity: 1!important;
+            position: absolute;
+            right: 0px;
+            top: 0px;
         }
     }
 }
