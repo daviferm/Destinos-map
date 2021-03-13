@@ -18,6 +18,7 @@
                     </button>
                 </div>
             </agm-info-window>
+            <agm-circle [latitude]="marcador.lat" [longitude]="marcador.lng" [radius]="1000" [fillColor]="'red'" [circleDraggable]="false" [editable]="true"></agm-circle>
         </agm-marker>
         <agm-marker *ngIf="gps" [latitude]="location.lat" [longitude]="location.lng" [iconUrl]="imgPosition">
         </agm-marker>
